@@ -1,0 +1,67 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de Compreensão sobre o PJe" />
+    <title>Guia PJe</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    {% comment %}{% endcomment %}
+    <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    <!-- {% comment %} <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" /> {% endcomment %} -->
+    <!-- {% comment %} <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> {% endcomment %} -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app_core/css/styles.css' %}" />
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf_viewer.min.css">
+</head>
+<body>
+<!-- jQuery e Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="{% url 'app_core:home' %}">Guia PJe</a>
+        <ul>
+            <li class="pure-menu-selected"><a href="{% url 'app_core:home' %}">Início</a></li>
+            <li><a href="{% url 'app_core:contact' %}">Contato</a></li>
+            <li><a href="{% url "app_guiapje:guiapje_completo" %}">Guia Completo</a></li>
+
+            {% comment %} {% if user.is_authenticated %} {% endcomment %}
+                {% comment %} <li><a href="{% url 'app_accounts:dashboard' %}">Painel</a></li> <!-- Significa para ir na aplicacao app_counts, no arquivo urls.py e ver o "name" dashboard. Conferir que aponta para "/conta". --> {% endcomment %}
+                {% comment %} <li><a href="{% url 'app_accounts:logout' %}">Sair</a></li> {% endcomment %}
+                {% comment %} {{ user.is_authenticated }} {% endcomment %}
+                {% comment %} {% if user.avatar %} {% endcomment %}
+                    {% comment %} <img src="{{ user.avatar.url }}" alt="{{ user.name }}" style="width: 40px; height: 25px; border-radius: 50%;" /> {% endcomment %}
+                    {% comment %} <img src="media/avatars/images/maria.jpg" alt="{{ user.name }}" style="width: 40px; height: 25px;" /> {% endcomment %}
+                {% comment %} {% else %}
+                    <img src="{% static 'images/avatar_unavailable.png' %}" alt="{{ user.name }}" style="width: 40px; height: 25px; border-radius: 50%;" />
+                {% endif %}
+            {% else %} {% endcomment %}
+                {% comment %} <li><a href="{% url 'app_accounts:login' %}">Entrar</a></li> {% endcomment %}
+            {% comment %} {% endif %} {% endcomment %}
+
+        </ul>
+    </div>
+</div>
+<div class="content">
+    {% if messages %}
+    <div class="pure-g-r content-ribbon">
+        <aside class="pure-u-1">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </aside>
+    </div>
+    {% endif %}    
+    {% block content %}{% endblock %}
+    <div class="footer">
+        Guia de Compreensão sobre o PJe - Uma abordagem de entendimento para usuários e profissionais de TI - @2024
+    </div>
+</div>
+<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
+</body>
+</html>

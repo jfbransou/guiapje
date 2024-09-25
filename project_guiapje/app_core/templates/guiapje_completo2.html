@@ -1,0 +1,808 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">Sobre este Guia</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Bem-vindo ao Guia de Compreensão sobre o Sistema do Processo Judicial Eletrônico (PJe). Este é um material didático elaborado de forma independente, com o objetivo de auxiliar um entendimento abrangente e prático sobre o funcionamento e a utilização do PJe, facilitando e otimizando seu uso no dia a dia por profissionais que utilizam o sistema. Não se trata de um manual a respeito do sistema em questão.
+    </p>
+    <!-- <p class="P1"> </p> -->
+    <p class="Paragraph">
+        Na internet, é possível encontrar diversas fontes de consulta que oferecem informações valiosas sobre o PJe. Essas fontes abrangem uma ampla gama de tópicos, incluindo aspectos técnicos, jurídicos, regras de negócios e notas de versão, dentre outros.
+    </p>
+    <!-- <p class="P1"></p> -->
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura1.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 1: Página da wiki referente ao PJe</div>
+        <div class="source">Fonte: <a href="https://www.pje.jus.br/wiki/index.php/P%C3%A1gina_principal" target="_blank">https://www.pje.jus.br/wiki/index.php/P%C3%A1gina_principal</a></div>
+    </div>
+    <p class="P1"></p>
+    <p class="Paragraph">
+        O nível de detalhes e a profundidade das informações disponíveis podem variar, mas sem dúvidas colaboram para um melhor entendimento do sistema.
+    </p>
+    <!-- <p class="P1"> </p> -->
+    <p class="Paragraph">
+        Muitos tribunais disponibilizam materiais pertinentes ao sistema em seus portais, incrementando mais ainda as opções para aprofundamento no PJe. Ao explorar esses recursos, você terá acesso a uma variedade de informações que podem auxiliar na compreensão e no uso eficiente do PJe, enriquecendo seu conhecimento e facilitando a utilização da aplicação.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">Objetivo do Guia</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        O objetivo deste trabalho é promover a aquisição de novas competências aos usuários que utilizam o sistema do Processo Judicial Eletrônico (PJe), sob uma abordagem profissional da Tecnologia da Informação, facilitando sua utilização por diversos usuários, tais como servidores do judiciário, advogados e magistrados, contribuindo para uma maior produtividade e eficiência, colaborando para Gestão do Conhecimento.
+    </p>
+    <!-- <p class="P1"> </p> -->
+    <p class="Paragraph">
+        Além das funcionalidades básicas, aborda também outras mais complexas, adentrando por muitas vezes em aspectos técnicos inerentes ao campo da Tecnologia da Informação, Jurídico e outros. Desta forma, o Guia traz uma visão de compreensão do ponto de vista de profissionais que se dispuseram a colaborar seus conhecimentos sobre o sistema, de forma a facilitar o aprendizado, procurando otimizar o tempo de aprendizado de outros usuários, além de servir como material de consulta sobre procedimentos que, por vezes, não nos recordamos.
+    </p>
+    <!-- <p class="P1"> </p> -->
+    <p class="Paragraph">
+        Como Órgão ilustrativo, será tomando como referência a versão do sistema utilizado pelo Tribunal de Justiça do Maranhão, em sua versão de testes, disponível, atualmente, em https://pjet.tjma.jus.br. Caso o ambiente fique inacessível por motivos adversos, consulte algo relacionado na página do portal do guia (www.guiapje.com.br). No portal você também encontrará o conteúdo presente neste material, além de outras informações importantes a respeito do sistema.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">Público-Alvo</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Este guia é destinado a todos os profissionais que utilizam o Sistema do Processo Judicial Eletrônico em suas atividades diárias, incluindo Profissionais da TI que prestam suporte ao PJe, Advogados, Magistrados, Servidores da Justiça, Estagiários e assistentes jurídicos, acadêmicos e estudantes de Direito.
+    </p>
+    <p class="P1"> </p>
+    <p class="Topic">Metodologia</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Para a elaboração deste guia, utilizamos uma abordagem prática e didática, com alguns exemplos ilustrativos, visando tornar a leitura e a aplicação dos conceitos o mais acessível possível. As informações foram compiladas a partir de fontes confiáveis e da experiência prática de especialistas na utilização do PJe.
+    </p>
+    <p class="P1"> </p>
+    <p class="Topic">Agradecimentos</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Gostaríamos de agradecer a todos os colaboradores que contribuíram com suas experiências e conhecimentos para a criação deste guia, em especial aos profissionais da área da Tecnologia Informação que trabalham junto Sistema do Processo Judicial Eletrônico, bem como os da área Jurídica.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">Esperamos que este guia seja uma ferramenta valiosa para aprimorar seu conhecimento e uso do PJe, tornando seu trabalho mais eficiente e produtivo. Boa leitura!
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">1 INTRODUÇÃO AO PJe</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    Os processos jurídicos existem por uma variedade de razões fundamentadas no desejo de assegurar a justiça. Quando um indivíduo acredita que seus direitos não estão sendo respeitados ou foram violados, ele recorre ao sistema judiciário em busca de uma solução. Este mecanismo formalizado permite a análise e resolução de conflitos, garantindo que os direitos e deveres estabelecidos pela lei sejam aplicados de maneira equitativa.
+    </p>
+    <p class="P1"></p>
+    <p class="Paragraph">
+    A forma mais comum de ressarcimento por dano é a indenização pecuniária. O indivíduo, como membro da sociedade, pode utilizar o valor recebido para compensar a perda ou o dano sofrido, adquirindo bens, serviços ou outras formas de benefício. No entanto, a reparação não se limita a compensações financeiras. Existem outras formas de compensação, como a retratação pública, a remoção de conteúdo difamatório ou ofensivo, e outras medidas destinadas a restaurar a dignidade e a reputação da pessoa prejudicada.
+    </p>
+    <p class="P1"></p>
+    <p class="Paragraph">
+    Por exemplo, um outdoor que exibe uma mensagem difamatória sobre alguém. Além de remover o outdoor, uma forma de reparação pode incluir a publicação de um novo outdoor com uma mensagem de desculpas ou uma retratação pública. Essa abordagem visa não apenas compensar a pessoa lesada, mas também restaurar sua imagem perante a comunidade.
+    </p>
+    <p class="P1"></p>
+    <p class="Paragraph">
+    A tecnologia da informação tem uma expansão crescente em todas as áreas de mercado, voltada para diferentes objetivos. No setor público é cada vez mais presente o desenvolvimento de sistemas para facilitar e otimizar os serviços administrativos, elevando sua eficiência e transparência.
+    </p>
+    <p class="P1"></p>
+    <p class="Paragraph">
+    Dessa forma, o Poder Judiciário brasileiro, através do Conselho Nacional de Justiça, incentiva a inovação tecnológica voltada para soluções digitais colaborativas que automatizam suas atividades e estimulam a transformação digital do Judiciário, visando assegurar serviços mais rápidos, eficientes e acessíveis.
+    </p>
+    <p class="P1"></p>
+    <p class="Paragraph">
+    A Resolução n.º 185, de 18/12/2013, instituiu o Sistema Processo Judicial Eletrônico - PJe como sistema de processamento de informações e prática de atos processuais. É uma plataforma digital amplamente utilizada para tramitação de processos digitais, garantindo uma otimização valiosa de tempo e recursos. 
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    O uso da tecnologia no setor público visa fazer com que a transparência seja uma regra, não apenas na disponibilidade das informações, mas sobretudo na sua acessibilidade. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    Esse guia é uma ferramenta de apoio tanto para usuários de ponta como para profissionais de suporte, trazendo uma visão prática da sua utilização e funcionamento.
+    </p>
+    <p class="P1"> </p>
+    <p class="Topic" style="font-size:12pt;">1.1 Definição</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    O Processo Judicial Eletrônico (PJe) é uma plataforma digital desenvolvida pelo Conselho Nacional de Justiça (CNJ), em colaboração com diversos tribunais. O sistema  visa modernizar a tramitação dos processos judiciais, proporcionando maior eficiência e transparência.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    Além da parceria com os tribunais, a plataforma conta com a participação consultiva de várias entidades relevantes, incluindo o Conselho Nacional do Ministério Público, a Ordem dos Advogados do Brasil, a Advocacia Pública e as Defensorias Públicas.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    Essas colaborações garantem que o sistema atenda às necessidades de todos os operadores do direito, promovendo uma integração harmoniosa entre as diferentes áreas do sistema judiciário.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    A versão atualmente empregada pelo Tribunal de Justiça do Maranhão, Versão 2.2.0.6, atualizada em 10/03/2024-11:15, 1º Grau, é composta por 837 tabelas, 5983 campos, 1346 relacionamentos de chaves estrangeiras (foreign key), além de 172 views (visões).
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    No momento da elaboração deste material, foi possível identificar que o Sistema do Processo Judicial Eletrônico (PJe) está amplamente presente na maioria dos Tribunais de Justiça Estaduais, além do Distrito Federal. Esta disseminação do PJe evidencia sua importância crescente no cenário jurídico nacional, promovendo maior agilidade e transparência nos processos judiciais.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    Atualmente, estima-se que o PJe gerencie milhões de processos em todo o país, facilitando o acesso e a consulta às partes interessadas e proporcionando um acompanhamento mais detalhado das ações judiciais.
+    </p>
+    <p class="P1"> </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura2.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 2: Presença do sistema PJe em Tribunais de Justiça Estadual</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A implementação do PJe tem contribuído significativamente para a redução da burocracia e para a celeridade na tramitação dos processos. Com a digitalização, é possível evitar a perda de documentos físicos e reduzir custos operacionais. Esse cenário favorece uma integração mais eficiente entre diferentes tribunais, promovendo uma justiça mais uniforme e eficaz.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+    As possibilidades de exploração de dados pelo Conselho Nacional de Justiça (CNJ) são vastas, permitindo a identificação de cenários específicos por regiões. Essas análises podem orientar melhorias e políticas públicas, resultando em um serviço judiciário mais adequado às necessidades da população. Com a expansão contínua do PJe, cada vez mais processos serão gerenciados eletronicamente, refletindo diretamente na qualidade do serviço prestado e na confiança do cidadão no sistema judiciário.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">2 O SISTEMA DE GESTÃO DE TABELAS PROCESSUAIS UNIFICADAS (SGT / TPU)</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        O Sistema do Processo Judicial Eletrônico (PJe) é parametrizado, em grande parte, através de seu alinhamento às normas e leis vigentes. Este alinhamento é essencial para garantir que o sistema opere de forma impessoal e justa, minimizando a possibilidade de influências externas que possam comprometer a sua integridade. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A configuração do PJe está intrinsecamente ligada ao conceito de "compliance", que assegura a conformidade com a legislação e regulamentações aplicáveis. Poucas são as configurações do sistema que não têm algum tipo de vínculo direto com esses parâmetros legais, o que destaca a importância de um sistema robusto e bem estruturado.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Neste contexto, o Sistema de Gestão de Tabelas Processuais Unificadas (SGT/TPU) desempenha um papel crucial. O sistema é uma iniciativa do Poder Judiciário brasileiro que visa padronizar e unificar a nomenclatura dos assuntos e classes processuais em todos os tribunais do país. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Esta padronização facilita a gestão e a organização dos processos, tornando o sistema mais eficiente e transparente. As tabelas processuais incluem uma vasta gama de informações, desde a classificação de tipos de processos até as fases processuais e os movimentos judiciais. Esta unificação permite uma comunicação mais clara e eficiente entre os diferentes tribunais e órgãos judiciais, garantindo que todos utilizem a mesma linguagem e critérios.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A importância do SGT/TPU no PJe vai além da simples organização. Ele assegura que as normas e diretrizes sejam seguidas de forma uniforme, contribuindo para a harmonização do sistema judicial como um todo. Com o SGT/TPU, as configurações do PJe são baseadas em critérios claros e consistentes, o que melhora a previsibilidade e a segurança jurídica. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Além disso, a utilização de um sistema unificado de tabelas processuais facilita a integração de novos módulos e funcionalidades no PJe, permitindo que o sistema evolua de maneira coordenada e sem rupturas. Em suma, o SGT/TPU é fundamental para o funcionamento eficiente e justo do PJe, garantindo que o sistema esteja sempre em conformidade com as melhores práticas e normas vigentes. 
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        No contexto da utilização do sistema PJe, é comum usuários abrirem solicitações de suporte a respeito de inconsistências de dados de processos, no que se refere aos parâmetros de classe, competência e assuntos atribuídos ao processo. Ou, em outros cenários, que deveriam, em suas opiniões, estarem disponíveis.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Por muitas vezes ocorre o desconhecimento do sistema SGT/TPU aqui mencionado. Por exemplo, muitas vezes o usuário tenta procurar atribuir determinada classe a um processo no sistema PJe, mas acaba não encontrando, desperdiçando seu precioso tempo, e tendo acionar a equipe de suporte. Nisto, é esclarecido o alinhamento do PJe com o sistema. Ocorre que, após uma consulta junto ao  sistema SGT/TPU, é comum encontrarmos a referida classe desativada. Isso pode ser observado, por exemplo, na figura abaixo, para a classe 1114 (Execução Contra a Fazenda Pública), cuja nomenclatura encontra-se tachada.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura3.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 3: Página do Sistemas de Gestão de Tabelas Processuais Unificadas</div>
+        <div class="source">Fonte: <a href="https://www.cnj.jus.br/sgt/consulta_publica_classes.php" target="_blank">https://www.cnj.jus.br/sgt/consulta_publica_classes.php</a></div>
+    </div>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">3 CADASTRANDO UM PROCESSO</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Existem processos que são relativamente mais simples em relação a outros. A depender da complexidade do processo a ser cadastrado, o sistema PJe apresenta fluxos, e por muitas vezes “telas”, diferentes para o seu cadastramento, Nisto, as particularidades repercutem em boa parte dos trâmites processuais. A título de exemplo, vamos expor aqui um caso bem simples. São processos envolvendo o direito do consumidor.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Para o exemplo, vamos considerar o seguinte cenário, de um caso hipotético.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Cenário 1:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Glede, cidadã,  brasileira, residente e domiciliada na cidade de Timon - MA, está sendo cobrada, de forma indevida, por uma assinatura de TV que ela não contratou, no valor de R$ 1000,00, por uma determinada empresa. Ela já informou à empresa  várias vezes que não foi ela quem fez o pedido de assinatura, tampouco autorizou ninguém a fazer isso em nome dela. No entanto, a empresa insiste que ela pague o débito, sem levar em consideração as colocações de Glede.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Glede não paga o valor, pois não acha justo pagar por aquilo que ela não contratou. Nisto, a empresa acabou incluindo o nome de Glede no Serviço de Proteção ao Crédito (SPC).
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Ocorre que Glede está em pleno processo de compra de um imóvel. E os trâmites de compra do seu imóvel acabou sendo interrompido, pois quando foram verificar os dados de Glede junto ao Serviço de Proteção ao Crédito, foi identificado que seu nome constava no SPC.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Glede procurou então seu advogado, o qual, pensando em agilizar os trâmites de compra do imóvel, orientou Glede a pagar o valor cobrado, e que em seguida iriam recorrer à Justiça em busca dos direitos de sua cliente. Nisto, após 05 dias que tinha efetuado o pagamento, e o nome de Glede não mais constar na lista de inadimplentes do SPC, o advogado de Glede iniciou o cadastro do processo no sistema PJe. Reuniu os documentos comprobatórios e acessou o sistema com seu certificado digital do tipo A3 (token). Ele sabe que o token é necessário para assinar atos e documentos, conforme preza a Resolução Resolução Nº 281 de 09/04/2019. do CNJ. 
+    </p>
+    
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura4.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 4: Tela inicial do PJe do Tribunal de Justiça do Maranhão (ambiente de treinamento)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        O advogado de Glede sabia tratar-se de um caso de <b>Matéria</b> de “Direito do Consumidor”, a ser protocolado na <b>Jurisdição</b> da cidade de Timon - MA, mais especificamente um Juizado Especial Cível, com a <b>Classe Judicial</b> “Procedimento do Juizado Especial Cível”. Dessa forma acessou o sistema PJe, e prosseguiu conforme telas a seguir. Na aba “DADOS INICIAIS”, foi selecionado os campos referentes a “Matéria”, “Jurisdição” e “Classe Judicial”.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura5.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 5: Tela de Cadastro do Processos (Dados Iniciais)</div>
+    </div>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura6.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 6: Tela de Cadastro do Processos (Assuntos)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Na aba “ASSUNTOS”, pesquise o assunto desejado. Você pode localizar os assuntos por alguma descrição do mesmo ou pelo código do assunto. Você pode incluir vários assuntos, sendo que apenas um deve ser o principal. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Nota de Compreensão:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        1) Uma vez colocado o primeiro assunto, ele passa a ser considerado como o principal. Nisto, ele não pode ser retirado, a menos que você inclua um outro assunto e o defina como sendo o principal.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        2) O sistema PJe vai apresentar os assuntos disponíveis conforme escolhas feitas pelo usuário na aba “DADOS INICIAS”, principalmente em função da “Classe Judicial” escolhida. Essa relação de assuntos segue as conformidades contidas pelo Sistema de Gestão de Tabelas Processuais Unificadas, mantido pelo CNJ. Atualmente, pode ser encontrada em https://www.cnj.jus.br/sgt/consulta_publica_classes.php. Por vezes, ocorre de o usuário estar querendo, equivocadamente, colocar um assunto que pode ter sido inativado conforme a Tabelas Processuais Unificadas Tabela (TPU). Neste caso, ele deve escolher assunto(s) válido(s).
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura7.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 7: Tela de Cadastro do Processos (Assuntos)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Na tela seguinte, deve-se escolher as “Partes” do processo. Ou seja, as pessoas, podendo ser elas pessoas Físicas, Jurídicas ou “Entes/Autoridades”.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura8.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 8: Tela de Cadastro do Processos (Assuntos)</div>
+    </div>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura9.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 9: Tela de Cadastro do Processos (selecionando o tipo  de parte)</div>
+    </div>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura10.png' %}" alt="Descrição da imagem" style="width: 80%; height: 80%;">
+        <div class="caption">Figura 10: Tela de Cadastro do Processos (confirmando a parte)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Após preencher o polo ativo, realizar os mesmos procedimentos para o polo passivo, e, se for o caso, adicionar ainda “Outros Participantes”
+    </p>
+    <p class="P1"> </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura11.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 11: Tela de Cadastro do Processos (Partes do Processo selecionadas)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Preencher a aba “CARACTERÍSTICAS”.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura12.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 12: Aba características do processo</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Caso a opção segredo de justiça seja escolhida com o “Sim”, todos os participantes do Polo Ativo terão acesso ao processo.
+    </p>
+    <p class="P1"> </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Preencher a aba “INCLUIR PETIÇÕES E DOCUMENTOS”.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura13.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 13: Aba “Incluir Petições e Documentos”</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Na tela acima, é possível tanto realizar o upload de uma arquivo do tipo “pdf” para a petição inicial, como também digitá-la, escolhendo, neste caso, a opção “Editor de texto”. Anexos adicionais também podem ser inseridos.
+    </p>
+    <p class="P1"> </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Preencher a aba “PROTOCOLAR INICIAL”.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura14.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 14: Aba “Protocolar Inicial”</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Ao se clicar em “Protocolar” o Processo será distribuído a um determinado órgão que compõe a Jurisdição escolhida. Telas de confirmação serão exibidas, e opções de download dos documentos (dados do processos) serão disponibilizados.
+    </p>
+    <p class="P1"> </p>
+    <p class="Topic" style="font-size:12pt;">3.1 Tipos de partes permitidas</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Na Figura 7 apresentada anteriormente, na etapa de se adicionar uma parte ao processo, o sistema apresentou um “ComboBox” perguntando o “Tipo de Parte”. Existem diversos tipos de partes , tais como “Autor”, “Requerente”, “Demandante”, etc. Esses “Tipos de partes” estão relacionados à classe escolhida para o processo. Essa configuração entre “Classes” e “Tipos de Parte” pode ser observada na figura a seguir:
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura15.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 15: Tipos de Partes para uma determinada Classe processual</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Na figura acima é importante observar a configuração de que um determinado tipo de parte pode ser do “Tipo principal” ou não, em quais polos deve estar disponível, se podem ser do tipo pessoa física, jurídica, Ente/Autoridade e ainda se deve ou não constar como “Outros participantes”. A título de exemplo, sabemos que o tipo “Testemunha” não deve ser configurado de forma possibilitar que seja uma Pessoa Jurídica em um processo.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Noutro exemplo, tomando-se agora por base o cadastro de um processo de uma CARTA PRECATÓRIA CRIMINAL, o sistema PJe permite, no cadastro das partes dois tipos: DEPRECANTE (No polo Passivo) e DEPRECADO (No polo Ativo).
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        No entanto, colocando-se apenas estas informações não será possível obter mais informações, propriamente ditas, das partes envolvidas. É possível fazer a configuração para Classe em questão dos tipos de partes possíveis em cada um dos polos.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Nesta versão, habilitar mais de um determinado tipo de parte como “Tipo Principal”, em um determinado polo, vai deixar de exigir, ou seja, deixar de ser obrigatório, a presença de um outro tipo. No exemplo em questão, temos que as CARTA PRECATÓRIA CRIMINAL exigem que haja um “Deprecante” no polo
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        ativo, e um “Deprecado” no polo passivo.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura15.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 16: Tipos de partes permitidas para uma determinada Classe judicial</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Se habilitarmos, por exemplo, a opção de “AUTOR” no polo passivo, o fato de agora ter 02 opções possíveis para o polo passivo (“DEPRECANTE” e/ou “AUTOR”), o sistema vai aceitar qualquer um dos dois, ou ambos. Mas assim poderia ser, de certa forma, um erro deixar nesta configuração. Pois o usuário pode esquecer de por o “DEPRECANTE”, o qual deveria ser obrigatório.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Desta forma, pelo momento, seria mais interessante habilitar esses outros tipos.. (AUTOR e RÉU) não no polo Passivo / Ativo, mas sim em “Outros Interessados”. Desta forma, mantém-se a obrigatoriedade o usuário informar um “DEPRECANTE” e um “DEPRECADO”, e deixa opcionalmente a possibilidade de se colocar “AUTOR” e RÉU”, como Outros Interessados. Desta forma, o sistema consegue localizar processos com essas partes.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Topic">4 A DISTRIBUIÇÃO DE UM PROCESSO</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        É comum a indagação por parte de usuários, principalmente servidores e magistrados, sobre como funciona a distribuição de processos no Sistema PJe. É preciso ter em mente que as regras de negócios utilizadas pelo sistema PJe foram aplicadas conforme estudo e análise envolvendo diversos profissionais, quando da concepção do sistema. Ou seja, essas regras não são provenientes unicamente de interpretação sob o ponto de vista de profissionais de TI. Não é uma prática típica no desenvolvimento de sistemas, ainda mais tratando-se dos complexos, a exemplo aqui o PJe.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        O que é considerado justo para se manter um equilíbrio de distribuição processual entre Órgãos de uma mesma jurisdição, que contenham as mesmas competências? A resposta pode não ser tão simples, pois envolve opiniões e pontos de vista diversos, onde é comum haver divergências, inclusive entre os membros do judiciário.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A distribuição de processos no sistema PJe não se dá em razão da quantidade de processos que um determinado Órgão já possua, nem da quantidade de processos por competências. O equilíbrio das distribuições é buscado em função do “Número Acumulador Distribuição”, explicado mais a seguir.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Cada processo, ao ser criado, recebe um valor de “peso processual”. Esse valor é calculado com base na classe judicial e assuntos contidos no processo. Esses “pesos processuais” são totalizados para cada Vara que recebe o processo, referenciados como “Número Acumulador Processo”.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Quando um processo vai ser distribuído, ele terá um “peso de distribuição”. Esse valor é calculado pegando-se o “peso processual” do processo e multiplicando-o por 100 (cem), e, em seguida, dividido pelo “Divisor do Cargo”, atribuído ao cargo judicial.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Esses “peso de distribuição” dos processos também são acumulados (totalizados), ao longo do tempo, na vara para o qual são distribuídos, referenciado num campo chamado “Número Acumulador Distribuição”. O acumulador não discrimina competências comuns e exclusivas. São totalizados os pesos de distribuição de todos os processos. É por meio deste acumulador que o sistema se baseia para o equilíbrio da distribuição, buscando alcançar o mesmo total para todas as varas da comarca. Ao sortear um processo de competência comum entre as varas, a probabilidade de ir para a vara com menor “Número Acumulador Distribuição” é maior.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Para a compreensão da distribuição de processos, vamos supor o seguinte cenário 01 a seguir:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        1) Considere que no município de Timon - MA, possua duas varas cíveis. 1ª Vara Cível e a 2ª Vara Cível.
+    </p>
+    <p class="Paragraph">
+        2) Essas duas varas são novas. Não receberam nenhum processo. Nisto, suas configurações e acumuladores são os contidos no quadro 01 a seguir:
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/quadro1.png' %}" alt="Descrição da imagem">
+        <div class="caption">Quadro 1: Configuração inicial dos acumuladores</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        3) Um determinado processo está sendo elaborado.
+    </p>
+    <p class="Paragraph">
+        4) A Matéria escolhida foi “Direito Processual Cível e do Trabalho”
+    </p>
+    <p class="Paragraph">
+        5) A jurisdição escolhida foi “Fórum da Comarca de Timon”. Nisto, o sistema aplica um filtro para o ComboBox seguinte (Classe Judicial).
+    </p>
+    <p class="Paragraph">
+        6) A Classe Judicial escolhida foi “Procedimento Comum Cível (7)”. O código “7” que aparece entre parênteses é o mesmo código utilizado pela tabela TPU fornecido pelo CNJ.
+    </p>
+    <p class="Paragraph">
+        7) O assunto escolhido foi “Inclusão Indevida em Cadastro de Inadimplentes (6226)”. Esse código “6226” que aparece entre parênteses é o mesmo código utilizado pela tabela TPU fornecido pelo CNJ.
+    </p>
+    <p class="Paragraph">
+        8) Na aba seguinte, foram adicionadas 02 (duas) partes, sendo uma pessoa física no polo ativo, e uma pessoa jurídica no polo passivo.
+    </p>
+    <p class="Paragraph">
+        9) Já na aba final (“PROTOCOLAR INICIAL”), o sistema informa que “Há mais de uma competência possível na jurisdição referente à classe, assuntos ou partes selecionadas”. Perceba que o sistema já realizou um filtro conforme características informadas até o momento. Dentre as competências disponibilizadas, suponha que o usuário tenha selecionado “Cível e Comércio”.
+    </p>
+    <p class="Paragraph">
+        10) Neste ponto, o usuário está prestes a protocolar o processo. Com base nos dados informados até o momento, o sistema já calculou o “peso” deste processo, como sendo 8 (oito). Esse “peso” do processo foi calculado com base na classe e assuntos escolhidos. Para cada um desses dois parâmetros, existe uma configuração pertinente no sistema PJe. Os valores de peso para
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        cada classe e assunto não são atribuídos de forma aleatória. Eles devem estar em conformidade, no caso do Tribunal aqui utilizado, com o que determina o CODOJE (Código de Divisão e Organização Judiciárias do Estado do Maranhão), o qual pode ser facilmente encontrado em sites de buscas, ou no próprio portal do Tribunal.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Voltando à questão do “peso” do processo, temos que:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        * Classe escolhida:  “Procedimento Comum Cível (7): Peso 4
+    </p>
+    <p class="Paragraph">
+        * Assunto escolhido: “Inclusão Indevida em Cadastro de Inadimplentes (6226)”: Peso 2
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Nisto, temos que o peso do processo foi calculado como: 4 x 2 = 8. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        11) Agora, temos que finalmente o usuário clica no botão “Protocolar” para distribuir o processo. Nesse momento, temos que:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        I) O sistema identifica os possíveis “Órgãos” aptos a receberem o processo: 1ª Vara Cível e a 2ª Vara Cível.
+    </p>
+    <p class="Paragraph">
+        II) O sistema identifica os “Cargos Judiciais”, aptos, de cada Órgão, que podem estar recebendo o processo: Juiz de Direito Titular, para ambas as varas.
+    </p>
+    <p class="Paragraph">
+        III) O sistema verifica qual é o “Número Acumulador Distribuição” de cada um dos Cargos Judiciais. No nosso cenário é 0 (zero) para ambos. Veja o quadro acima.
+    </p>
+    <p class="Paragraph">
+        IV) Como não há “distância” (diferença) maior que o valor de 150 entre os “Número Acumulador Distribuição” dos cargos judiciais, então o sistema incluirá ambos os Cargos Judiciais para participar do sorteio final. O sorteio é então realizado, sendo definido como a 1ª Vara Cível a receber o processo.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Esse valor “150” é um valor definido nas configurações do sistema PJe, podendo, se for o caso, ser alterado. Caso exista uma distância maior que 150, o sistema realizaria um sorteio preliminar, de forma a determinar se o Cargo Judicial com maior “Número Acumulador Distribuição” deve, ou não, participar do sorteio final. Esse sorteio preliminar consiste em sortear, aleatoriamente, um número entre 0 e 99. Se o número sorteado for menor que 25, então o Cargo Judicial com maior “Número Acumulador Distribuição” também irá participar do sorteio final.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        V) O sorteio foi realizado. Neste ponto, o sistema irá calcular o “valor do peso de distribuição” para o referido processo. Ele pega então o número do valor do “peso do processo”, multiplica por 100, e em seguida divide pelo número do  divisor do cargo judicial (vide quadro acima). Dessa forma, temos que:
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container" style="border: 0px">
+        <img src="{% static 'app_guiapje/images/calculo1.png' %}" alt="Descrição da imagem">
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        VI) Neste ponto, vamos recolocar nosso quadro posto anteriormente, atualizado:
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/quadro2.png' %}" alt="Descrição da imagem">
+        <div class="caption">Quadro 2: Acumuladores após a distribuição do primeiro processo</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Esse foi o comportamento apresentado para o Cenário 01. É importante observar que não há, propriamente dito, um fator de proporcionalidade para a distribuição de processos. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Vários outros cenários podem ocorrer. Um outro processo poderia ser cadastrado em seguida, e mesmo assim ser distribuído para a 1ª Vara Cível novamente. No entanto, percebe-se que o sistema busca fazer um equilíbrio da carga de processos distribuídos às varas, levando em consideração, como já posto anteriormente, o “<b>Número Acumulador Distribuição</b>”. Vale lembrar que, caso um determinado Órgão tenha uma determinada competência exclusiva, não haverá de se falar em sorteio.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Vamos fazer uma pequena suposição de um outro cenário. Suponha que as varas em questão já funcionem a alguns anos, e que temos o seguinte quadro:
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/quadro3.png' %}" alt="Descrição da imagem">
+        <div class="caption">Quadro 3: Acumuladores das varas após alguns anos de atividade</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Neste ponto, e se uma nova vara for criada? Como ela deveria iniciar sua configuração? Perceba que caso ela se inicie com o “Número Acumulador Distribuição” zerado, a nova vara irá receber uma carga muito maior de processos.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Essa questão é muitas vezes pontos de debates em meio aos gestores, pois alguns entendem que, devido a unidade estar sendo “criada” agora, é justo que ela receba uma grande carga de trabalho, de forma a compensar o trabalho desenvolvido, pelas outras varas, nos anos anteriores.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Alguns, por outro lado, não entendem que esta seja a melhor forma a ser aplicada, pois entendem que se uma nova unidade está para ser criada, o ideal seria distribuir a carga de trabalho atual entre elas, de forma que todas contenham um valor mediano de carga de trabalho.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        No entanto, podem existir fatores inerentes às legislações que não viabilizam tal procedimento, pois, para a sugestão colocada, a ideia seria redistribuir os processos para uma outra unidade somente para fins de equiparação de cargo de trabalho, o que não há, atualmente, amparo legal para o procedimento.
+    </p>
+    <p class="P1"> </p>
+    <p class="Topic" style="font-size:12pt;">4.1 Processos Migrados</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Processos migrados geralmente são aqueles provenientes de outros sistemas anteriores ao PJe, tais como Projudi e Themis, por exemplo. Na versão atual do PJe, os processos migrados, quando inseridos no PJe, possuem peso processual com o valor 0 (zero). Consequentemente, seu “peso de distribuição” é 0 (zero) também.  Desta forma, não agrega diferença nos acumuladores.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        No entanto, uma vez que esses processos tenham sido retificados, havendo de fato alguma alteração entre competência, classe, assunto, etc, pode ser que o sistema recalcule o peso processual do processo, baseando-se em suas novas características. Você encontrará mais informações a respeito da retificação de processos no Tópico 6.
+    </p>
+    <p class="P1"> </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="Topic">5 O CONTROLE DOS PRAZOS / EXPEDIENTES</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Outro aspecto interessante que resolvemos abordar neste material diz respeito à controle de prazos e expedientes emitidos a um ou mais destinatários. Principalmente por parte de advogados, é recorrente a abertura de solicitações junto às equipes de suporte do PJe envolvendo esclarecimentos sobre esse tópico, bem como supostas solicitações de correções.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        O que percebemos é que os fatores que mais influenciam no equívoco de compreensão está relacionado à quantidade de dias estabelecidos para determinada forma de comunicação, e como se considerar a contagem sobre esses dias: se corridos ou se em dias úteis, o que neste caso, há de se atentar aos feriados estabelecidos. Desta forma, por vezes, os usuários acabam por perder alguns prazos.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Quanto às notificações enviadas eletronicamente, a Lei nº 11.419/06, que regulamenta a informatização do processo judicial, estabelece um prazo de 10 dias para que elas sejam lidas. Decorrido esse período, o advogado é presumido intimado pelo sistema, ainda que tenha se mantido inerte. Caso o advogado não leia a notificação dentro desse prazo, considera-se que ele foi intimado automaticamente pelo sistema, independentemente de qualquer ação tomada. Essa presunção de intimação aplica-se tanto aos processos que estão tramitando no primeiro grau quanto àqueles que estão no segundo grau de jurisdição. É importante, portanto, que os advogados fiquem atentos às notificações eletrônicas para evitar perda de prazos e possíveis prejuízos aos seus clientes.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A Regra de Negócio “RN384” aplicada a este contexto no PJe diz o seguinte: “Quando a intimação é feita de forma eletrônica, o sistema estabelece um prazo de 10 (dez) dias corridos para que o usuário registre a ciência da intimação, caso contrário o sistema considerará a intimação automaticamente realizada na data do término desse prazo, registrando a ciência com a seguinte informação: "O sistema registrou ciência em DD/MM/AAAA 23:59:59". O prazo para ciência de intimações eletrônicas, internamente no PJe, é chamado de data prazo processual. A data desse campo é a data limite para ciência.”
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Já os expedientes de comunicação enviados pelo sistema só ficam visíveis ao destinatário após ele tomar ciência. Embora o usuário possa desejar "ver o documento" antes de reconhecer o recebimento, o sistema não permite essa visualização antecipada. Esse mecanismo visa garantir que o recebimento das comunicações seja formalmente reconhecido, assegurando a confirmação do processo de notificação.
+    </p>
+    <p class="P1"> </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Para uma melhor compreensão a respeito da contagem de prazos, vamos supor, a nível de exemplo, a expedição de um expediente do tipo “Despacho (expediente)” (nº 2345678) enviado à parte através do “Diário Eletrônico”., conforme figura abaixo:
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura17.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 17: Contagem de prazos para Despacho (expediente)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A contagem dos prazos se deu da seguinte forma:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        1º) O expediente foi criado em 08/02/2024 14:52:15
+    </p>
+    <p class="Paragraph">
+        2º) O expediente foi enviado ao diário em 08/02/2024, e disponibilizado no mesmo em 09/02/2024 00:00.
+    </p>
+    <p class="Paragraph">
+        3º) O sistema registra a ciência atribuindo-se a data do primeiro 1º dia útil seguinte à data de 09/02/2024 00:00. Como nos dias 12 e 13 de fevereiro foram feriados de carnaval, a data registrada para ciência foi a de 14/02/2024 00:00.
+    </p>
+    <p class="Paragraph">
+        4º) O sistema calculou o prazo para manifestação, somando-se 15 dias úteis após 14/02/2024, resultando assim na data de 06/03/2024 23:59:59.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura18.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 18: Detalhamento da contagem de prazos para Despacho (expediente)</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        No nosso próximo exemplo, temos a expedição de um expediente do tipo “intimação” (nº 1234567) enviado à parte através do “Diário Eletrônico”., conforme figura abaixo:
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura19.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 19: Contagem de prazos de uma intimação via Expedição Eletrônica</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        A contagem dos prazos se deu da seguinte forma:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        1º) O expediente foi criado em 13/03/2024 10:35:57
+    </p>
+    <p class="Paragraph">
+        2º) Para esse meio de comunicação (expedição eletrônica), o prazo para ciência é o 1º dia útil após 10 dias corridos da data de 13/03/2024. Desa forma, o sistema realizou o cálculo e definiu como data limite para a ciência a data de 25/03/2024 23:59:59.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura20.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 20: Contagem da data limite calculada para a ciência</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        3º) Após isso, o sistema calculou o prazo para manifestação, sendo 15 dias úteis após a data da ciência citada anteriormente. A peculiaridade deste exemplo é que os dias 27, 28 e 29 de março de 2024 foram os dias de feriado da Semana Santa. Desta forma, a data para manifestação foi calculada para 18/04/2024 23:59.
+    </p>
+    <p class="P1"> </p>
+    <div class="image-container">
+        <img src="{% static 'app_guiapje/images/figura21.png' %}" alt="Descrição da imagem">
+        <div class="caption">Figura 21: Contagem da data limite calculada para a manifestação</div>
+    </div>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Os prazos no PJe variam conforme o tipo de ato processual e normas específicas. Alguns prazos comuns são estabelecidos pelo Código de Processo Civil (CPC) e outras regulamentações pertinentes. Atentar-se aos prazos no processo judicial é fundamental para garantir o direito de defesa e a celeridade processual. O cumprimento rigoroso dos prazos evita prejuízos, como a perda de oportunidades de recurso ou a preclusão de direitos. Além disso, respeitar os prazos demonstra diligência e profissionalismo, refletindo positivamente na atuação dos advogados e partes envolvidas. A gestão eficiente do tempo contribui para a credibilidade do sistema judiciário e a justiça efetiva..
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="Topic">6 RETIFICAÇÃO DE PROCESSOS</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        O último aspecto abordado neste material está relacionado à retificação de processos, em particular quando ocorre evolução do mesmos. O que ocorre,  nos pesos e acumuladores, quando um determinado processo é evoluído? Ou seja, ele tem suas características de classe, assuntos, dentre outra, alteradas?
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Para melhor o entendimento, vamos considerar as seguintes situações, hipotéticas,  a um determinado processo:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        1) Que, num primeiro momento, ele tenha sido protocolado com as seguintes características:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph"> i) Classe "7 - Procedimento Comum Cível"</p>
+    <p class="Paragraph"> ii) Assunto "10503 - Erro médico";"</p>
+    <p class="Paragraph"> iii) 01 (uma) pessoa no polo ativo</p>
+    <p class="Paragraph"> iv) 01 (uma) pessoa no polo passivo</p>
+    <p class="Paragraph"> v) Peso do processo: 16 pontos.</p>
+    <p class="Paragraph"> vi) Peso distribuição do processo: 1600 (mil e seiscentos dezesseis) pontos"</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Neste ponto, esse valor de 1600 será adicionado ao acumulador de peso do 	cargo judicial do órgão.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        2) Que, após o encerramento da fase em que foi processado na classe 7, haja uma uma decisão determinando:
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph"> i) Evolução para a classe "12078 - Cumprimento de sentença contra a Fazenda Pública"</p>
+    <p class="Paragraph"> ii) Assunto "9517- Causas supervenientes à Sentença" (principal)."</p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Neste cenário, após a execução da tarefa de evolução, considerando que sua classe processual e assuntos foram alterados, o sistema recalcula o novo peso do processo, e, consequentemente, seu peso de distribuição também, baseado nas suas características novas.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Tendo o valor sofrido operação de incremento ou decremento, a mesma operação, com a respectiva diferença, repercutirá nos acumuladores do referido cargo judicial do Órgão.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="Paragraph"> 
+        Para o exemplo colocado, o peso desse processo após a execução da tarefa de evolução e seu assunto sendo alterado para "9517- Causas supervenientes à Sentença" será de 6 (seis). Seu peso de distribuição será 600. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Observa-se que seu peso processual foi alterado de 16 para 6 (diferença de 10). O peso de distribuição foi alterado de 1600 para 600 (diferença de 1000). Nesse cenário, o "Número Acumulador Processo" terá uma redução de 10, e o "Número Acumulador Distribuição" terá uma redução de 1000.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Se ao invés de uma evolução de processo tivesse ocorrido o cadastramento de um novo processo, com as mesmas características da hipótese de evolução, teríamos que o peso do processo seria 6, e no acumulador de peso do órgão seria 600 (seiscentos) pontos. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Interessante notar que, na versão atual do sistema PJe, a simples evolução do processo em si, (tarefa: “Evoluir classe processual”), altera a classe do processo, que, por conseguinte, altera o peso equivalente à classe, mas o sistema não altera o valor do peso processo, o que, pelo momento, carece de um estudo mais aprofundado sobre esse comportamento.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Fazendo um pequeno adendo à questão relacionada ao “assunto” do processo, é importante ter em mente que se, por acaso, o peso de um determinado assunto for alterado, em suas configurações, de 2 (dois) para 3 (três), todos os processos que possuem o citado assunto não terão seus pesos processuais atualizados automaticamente. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Isso não acontece. O sistema não realiza um “update” em toda a base de dados. Novamente, temos a situação de que esses processos só terão seus pesos processuais atualizados quando os mesmos tiverem determinadas retificações, ou no caso de processos novos. 
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Dizemos aqui “determinadas” porque não é qualquer retificação que implica em alteração do peso processual. Os casos mais comuns são quando ocorre alteração de classe, assunto, competência ou número de partes (qualquer um deles).
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="Topic">CONSIDERAÇÕES FINAIS</p>
+    <p class="P1"> </p>
+    <p class="Paragraph"> 
+        Esperamos sinceramente que este material tenha contribuído para uma compreensão mais aprofundada do Sistema de Processo Judicial Eletrônico (PJe). Como usuário do sistema, saiba que você tem um papel fundamental na modernização da justiça, impactando significativamente o cotidiano de milhares de advogados, juízes, servidores e cidadãos que dependem da eficiência dos processos judiciais., não só agilizando a tramitação dos processos, mas também proporcionando maior transparência e acessibilidade.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Ao longo deste guia, buscamos oferecer, sob uma visão de profissionais da Tecnologia da Informação, juntamente com profissionais do área do Direito, uma compreensão de terminados aspectos relacionados o sistema.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Entendemos que a familiarização com este sistema é crucial para todos os operadores do direito, uma vez que o PJe representa uma mudança paradigmática na forma como os processos são gerenciados e conduzidos. Com isso, esperamos que você tenha adquirido conhecimentos valiosos que aprimorem sua atuação profissional.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Além de esclarecer dúvidas e fornecer orientações, este material foi elaborado com o objetivo de agregar valor ao seu cotidiano profissional. Sabemos que a eficiência e a eficácia na utilização do PJe são fundamentais para garantir um serviço de qualidade e uma justiça mais célere. É importante que os usuários do sistema se mantenham atualizados e capacitados, acompanhando as constantes evoluções e inovações tecnológicas que o PJe incorpora.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Concluímos reafirmando a importância do contínuo aprendizado e adaptação às novas ferramentas que moldam o cenário jurídico atual. Acompanhar as atualizações do PJe e aperfeiçoar as habilidades de utilização do sistema são passos essenciais para os usuários.
+    </p>
+    <p class="P1"> </p>
+    <p class="Paragraph">
+        Esperamos que este guia sirva como uma referência útil e duradoura em sua trajetória profissional, auxiliando-o a enfrentar os desafios diários com mais confiança e competência. Agradecemos por utilizar este material e desejamos sucesso em sua carreira.
+    </p>
+</div>
+<p class="P1"> </p>
+<div class="a4">
+    <p class="Topic">Referências</p>
+    <p class="P1"> </p>
+    <p class="Paragraph"> 
+        xxxxxxxxxxxxxxxx.
+    </p>
+</div>
+{% endblock  %}

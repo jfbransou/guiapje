@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="splash">
+        <div class="pure-g-r">
+            <div class="pure-u-1">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head">
+                        Guia de Compreensão sobre o PJe
+                    </h1>
+                    <h2 class="splash-subhead">
+                        Uma abordagem de entendimento para usuários e profissionais de TI
+                    </h2>
+                    <p>
+                        Bem-vindo ao Guia de Compreensão sobre o Sistema do Processo Judicial Eletrônico (PJe). Este é um material didático elaborado de forma independente,
+                        com o objetivo de auxiliar um entendimento abrangente e prático sobre o funcionamento e a utilização do sistema, facilitando e otimizando seu uso no dia a dia
+                        por profissionais que o utilizam. Você pode ler o guia por esta página, ou baixá-lo se preferir. Boa Leitura!
+                    </p>
+                    <p>
+                        {% comment %} <a href="#" class="pure-button primary-button">Baixar o Guia!</a> {% endcomment %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="pure-g content-ribbon">
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead"><a href="{% url "app_guiapje:guiapje_completo" page_number=14 %}">O SISTEMA DE GESTÃO DE TABELAS PROCESSUAIS UNIFICADAS (SGT / TPU)</a></h4>
+                    <h3></h3>
+                    <p>
+                        Nesse primeiro tópico, enfatizamos a importância do Sistema de Gestão de Tabelas Processuais Unificadas (SGT/TPU),
+                         que desempenha um papel essencial na padronização da nomenclatura de assuntos e classes processuais em todos os tribunais do país.
+                          O Sistema do Processo Judicial Eletrônico (PJe) é parametrizado para garantir a conformidade com as normas e leis vigentes, 
+                          assegurando imparcialidade e justiça em sua operação. Ele é configurado de acordo com o conceito de "compliance",
+                           que garante a adesão às regulamentações aplicáveis. A unificação promovida pelo SGT/TPU facilita a organização e comunicação
+                            entre diferentes órgãos judiciais, promovendo eficiência e transparência. Isso possibilita que o PJe evolua de maneira coordenada, 
+                            mantendo a previsibilidade e a segurança jurídica em suas operações, contribuindo para a harmonização do sistema como um todo.
+                    </p>
+                </div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2200">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner"> 
+                            <div class="carousel-item active">
+                                <img src="{% static 'app_guiapje/images/figura1.png' %}" class="d-block w-100" alt="Imagem 1" style="width: 400px; height: 250px;">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura2.png' %}" class="d-block w-100" alt="Imagem 2" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura3.png' %}" class="d-block w-100" alt="Imagem 3" style="width: 400px; height: 250px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner"> 
+                            <div class="carousel-item active">
+                                <img src="{% static 'app_guiapje/images/figura15.png' %}" class="d-block w-100" alt="Imagem 1" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura16.png' %}" class="d-block w-100" alt="Imagem 2" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura15.png' %}" class="d-block w-100" alt="Imagem 3" style="width: 400px; height: 250px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead"><a href="{% url "app_guiapje:guiapje_completo" page_number=16 %}">CADASTRANDO UM PROCESSO</a></h4>
+                    <h3></h3>
+                    <p>
+                        O gerenciamento dos processos eletrônicos começa pelo cadastro dos mesmos junto ao sistema PJe. Nisto, essse tópico traz notas importantes de compreensão sobre
+                        o castastro, tais como jurisdições, classes judiciais, assuntos, tipos de partes permitidas ao processo,
+                        a importância do certificado digital para assinatura de documentos, competências, dentre outras.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g content-ribbon">
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead"><a href="{% url "app_guiapje:guiapje_completo" page_number=26 %}">A DISTRIBUIÇÃO DE UM PROCESSO</a></h4>
+                    <h3></h3>
+                    <p>
+                        Neste tópico, abordamos a frequente dúvida de usuários, como servidores e magistrados, sobre a distribuição de processos no Sistema PJe. 
+                        É importante compreender que as regras de negócios implementadas no PJe resultam de estudos e análises conduzidos por uma equipe multidisciplinar, 
+                        e não apenas por profissionais de TI. Esse processo de concepção é essencial para garantir que as complexidades do sistema, 
+                        como a distribuição justa de processos entre órgãos, sejam tratadas buscando-se o equiliíbrio. 
+                    </p>
+                </div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3100">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner"> 
+                            <div class="carousel-item active">
+                                <img src="{% static 'app_guiapje/images/quadro1.png' %}" class="d-block w-100" alt="Imagem 1" style="width: 400px; height: 250px;">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/quadro2.png' %}" class="d-block w-100" alt="Imagem 2" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/quadro3.png' %}" class="d-block w-100" alt="Imagem 3" style="width: 400px; height: 250px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner"> 
+                            <div class="carousel-item active">
+                                <img src="{% static 'app_guiapje/images/figura17.png' %}" class="d-block w-100" alt="Imagem 1" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura18.png' %}" class="d-block w-100" alt="Imagem 2" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura19.png' %}" class="d-block w-100" alt="Imagem 3" style="width: 400px; height: 250px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    {% comment %} <h4 class="content-subhead"><a href="{% static 'pdfjs/web/viewer.html' %}?file={{ request.scheme }}://{{ request.get_host }}{% static 'app_guiapje/files/guiapje-v1.0.pdf' %}#page=30" target="_blank">O CONTROLE DE PRAZOS / EXPEDIENTES</a></h4> {% endcomment %}
+                    <h4 class="content-subhead"><a href="{% url "app_guiapje:guiapje_completo" page_number=31 %}">O CONTROLE DE PRAZOS / EXPEDIENTES</a></h4>
+                    <h3></h3>
+                    <p>
+                        Abordamos aqui um aspecto recorrente entre os usuários do PJe, especialmente advogados, que se refere ao controle de prazos e expedientes emitidos. Muitas solicitações de
+                         suporte envolvem dúvidas sobre o prazo de comunicação, em especial quanto à contagem de dias, seja em dias corridos ou úteis, 
+                         e a necessidade de observar feriados, o que pode resultar na perda de prazos. A Lei nº 11.419/06 que, por exemplo, regulamenta a informatização do processo judicial, 
+                         estabelece um prazo de 10 dias para a leitura de notificações eletrônicas, após o qual o advogado é presumido intimado. 
+                         Isso reforça a importância de atenção contínua às notificações para evitar possíveis prejuízos processuais.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g content-ribbon">
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead"><a href="{% url "app_guiapje:guiapje_completo" page_number=35 %}">RETIFICAÇÃO DE PROCESSOS</a></h4>
+                    <h3></h3>
+                    <p>
+                        Neste último tópico, discutimos a questão da retificação de processos, especialmente quando há uma evolução dos mesmos. 
+                        A dúvida comum é o impacto que essa mudança provoca nos pesos e acumuladores, ou seja, como as alterações nas características do processo — como classe e 
+                        assuntos — afetam seu registro no sistema. Essas modificações podem gerar efeitos relevantes na forma como o processo é tratado no PJe, 
+                        exigindo atenção para garantir que as informações permaneçam atualizadas e precisas ao longo de sua tramitação.
+                    </p>
+                </div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2200">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner"> 
+                            <div class="carousel-item active">
+                                <img src="{% static 'app_guiapje/images/figura13.png' %}" class="d-block w-100" alt="Imagem 1" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura14.png' %}" class="d-block w-100" alt="Imagem 2" style="width: 400px; height: 250px;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'app_guiapje/images/figura15.png' %}" class="d-block w-100" alt="Imagem 3" style="width: 400px; height: 250px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock  %}

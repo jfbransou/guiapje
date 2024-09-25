@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="pdf-container"></div> <!-- Contêiner onde as páginas serão adicionadas dinamicamente -->
+
+<script>
+    // URL do seu arquivo PDF
+    const url = "{% static 'app_guiapje/files/guiapje-v1.0.pdf' %}";
+
+    // Função para renderizar uma página do PDF no canvas
+    async function renderPage(pdf, pageNumber) {
+        const page = await pdf.getPage(pageNumber);
+        const viewport = page.getViewport({ scale: 1.0 });
+
+        // Criar uma nova div.a4 e canvas para cada página
+        const divA4 = document.createElement('div');
+        divA4.classList.add('a4');
+        
+        const divPdf = document.createElement('div');
+        divPdf.classList.add('a4-pdf');
+
+        const canvas = document.createElement('canvas');
+        canvas.id = `pdf-canvas-${pageNumber}`; // Definir ID único para cada canvas
+        divPdf.appendChild(canvas);
+        divA4.appendChild(divPdf);
+
+        // Adicionar o novo bloco de página no contêiner
+        document.getElementById('pdf-container').appendChild(divA4);
+
+        // Renderizar a página no canvas
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+        };
+        await page.render(renderContext).promise;
+    }
+
+    // Função principal para carregar e renderizar o PDF
+    async function loadPDF() {
+        const loadingTask = pdfjsLib.getDocument(url);
+        const pdf = await loadingTask.promise;
+        const numPages = pdf.numPages;
+
+        // Renderizar todas as páginas dinamicamente
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+            await renderPage(pdf, pageNum);
+        }
+    }
+
+    // Carregar o PDF quando a página estiver pronta
+    document.addEventListener('DOMContentLoaded', loadPDF);
+</script>
+{% endblock %}
