@@ -29,21 +29,17 @@
             <li class="pure-menu-selected"><a href="{% url 'app_core:home' %}">Início</a></li>
             <li><a href="{% url 'app_core:contact' %}">Contato</a></li>
             <li><a href="{% url "app_guiapje:guiapje_completo" %}">Guia Completo</a></li>
-
-            {% comment %} {% if user.is_authenticated %} {% endcomment %}
-                {% comment %} <li><a href="{% url 'app_accounts:dashboard' %}">Painel</a></li> <!-- Significa para ir na aplicacao app_counts, no arquivo urls.py e ver o "name" dashboard. Conferir que aponta para "/conta". --> {% endcomment %}
-                {% comment %} <li><a href="{% url 'app_accounts:logout' %}">Sair</a></li> {% endcomment %}
-                {% comment %} {{ user.is_authenticated }} {% endcomment %}
-                {% comment %} {% if user.avatar %} {% endcomment %}
-                    {% comment %} <img src="{{ user.avatar.url }}" alt="{{ user.name }}" style="width: 40px; height: 25px; border-radius: 50%;" /> {% endcomment %}
-                    {% comment %} <img src="media/avatars/images/maria.jpg" alt="{{ user.name }}" style="width: 40px; height: 25px;" /> {% endcomment %}
-                {% comment %} {% else %}
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'app_accounts:dashboard' %}">Painel</a></li> <!-- Significa para ir na aplicacao app_counts, no arquivo urls.py e ver o "name" dashboard. Conferir que aponta para "/conta". -->
+                <li><a href="{% url 'app_accounts:logout' %}">Sair</a></li>
+                {% if user.avatar %}
+                    <img src="{{ user.avatar.url }}" alt="{{ user.name }}" style="width: 40px; height: 25px; border-radius: 50%;" />
+                 {% else %}
                     <img src="{% static 'images/avatar_unavailable.png' %}" alt="{{ user.name }}" style="width: 40px; height: 25px; border-radius: 50%;" />
                 {% endif %}
-            {% else %} {% endcomment %}
-                {% comment %} <li><a href="{% url 'app_accounts:login' %}">Entrar</a></li> {% endcomment %}
-            {% comment %} {% endif %} {% endcomment %}
-
+            {% else %}
+                <li><a href="{% url 'app_accounts:login' %}">Entrar</a></li>
+            {% endif %}
         </ul>
     </div>
 </div>

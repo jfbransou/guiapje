@@ -24,7 +24,7 @@ class PasswordResetForm(forms.Form):
         reset = PasswordReset(key=key, user=user)
         reset.save()
         template_name = 'app_accounts/password_reset_mail.html'
-        subject = 'Criar una nova senha no Simplemooc'
+        subject = 'Criar uma nova senha no portal do Guia PJe'
         context = {
             'reset': reset
         }

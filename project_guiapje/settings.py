@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+# Teste de alteração
 
 from pathlib import Path
 import os
@@ -80,17 +81,13 @@ WSGI_APPLICATION = 'project_guiapje.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    #'default': {
-    #    'ENGINE': 'django.db.backends.mysql',
-    #    'NAME': BASE_DIR / 'db.mysql',
-    #}
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'guia_pje',
-        'USER': 'jfbransou',
-        'PASSWORD': 'Opus@#1981',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': str(os.getenv('DATABASE_ENGINE')), 
+        'NAME': str(os.getenv('DATABASE_NAME')),
+        'USER': str(os.getenv('DATABASE_USER')),
+        'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
+        'HOST': str(os.getenv('DATABASE_HOST')),   # Or an IP Address that your DB is hosted on
+        'PORT': str(os.getenv('DATABASE_PORT')),
     }
 }
 
@@ -134,52 +131,43 @@ STATIC_URL = '/static/'
 
 # O STATICFILES_DIRS informa ao Django onde procurar arquivos estáticos além das pastas static/ nas aplicações.
 STATICFILES_DIRS = [
-    #BASE_DIR / "static", # Pasta global 'static' no diretório do projeto 
     os.path.join(BASE_DIR, 'project_guiapje/static'), # Pasta global 'static' no diretório do PROJETO 
     os.path.join(BASE_DIR, 'project_guiapje/app_core/static'), # Pasta 'static' da APLICAÇÃO app_core
     os.path.join(BASE_DIR, 'project_guiapje/app_guiapje/static'), # Pasta 'static' da APLICAÇÃO app_guiapje
-    #os.path.join(BASE_DIR,'project_guiapje/app_guiapje/static'),
-    #os.path.join(BASE_DIR,'project_guiapje/app_core/static'),
-    #os.path.join(BASE_DIR,'project_guiapje/app_guiapje/static'),
-    #os.path.join(BASE_DIR,'project_guiapje/app_core/static')
 ]
 
-#STATIC_ROOT = os.path.join(BASE_DIR,'project_guiapje/staticfiles')
 STATIC_ROOT = os.path.join(BASE_DIR, 'project_guiapje/staticfiles') 
 
+#print(f"STATICFILES_DIRS ======= : ", STATICFILES_DIRS)
+#print("STATIC_ROOT: =============: ", STATIC_ROOT)
+#print(f"BASE_DIR ======= : ", BASE_DIR)
 
-print(f"STATICFILES_DIRS ======= : ", STATICFILES_DIRS)
-print("STATIC_ROOT: =============: ", STATIC_ROOT)
-print(f"BASE_DIR ======= : ", BASE_DIR)
 # Comando python3 manage.py findstatic --verbosity 2
 
 # Comando: python3 manage.py collectstatic:
 # Esse comando copia todos os arquivos estáticos (de todas as pastas static/ nas APLICAÇÕES e no diretório global do PROJETO) para o diretório especificado na variável STATIC_ROOT
 
-# http://127.0.0.1:8000/static/images/figura1.png'
-
 MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR,'project_guiapje/media')
 MEDIA_ROOT = os.path.join(BASE_DIR,'project_guiapje','media')
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Configurações para o Email
+
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # simular envio via console
 #Email
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# DEFAULT_FROM_EMAIL = 'Nome <socorro.fontenele@gmail.com>'
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'jfbransou@gmail.com'
-# EMAIL_HOST_PASSWORD = 'fums wtlw xbhv omqt'
-# EMAIL_PORT = 587
-# CONTACT_EMAIL = 'jfbransou2@gmail.com' # destinatário do email...
+EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND'))
+DEFAULT_FROM_EMAIL = str(os.getenv('DEFAULT_FROM_EMAIL'))  # 'Guia PJe <jfbransou@gmail.com>'
+EMAIL_USE_TLS = str(os.getenv('EMAIL_USE_TLS'))
+EMAIL_HOST = str(os.getenv('EMAIL_HOST'))
+EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
+EMAIL_PORT = str(os.getenv('EMAIL_PORT'))
+#CONTACT_EMAIL = str(os.getenv('CONTACT_EMAIL')) # destinatário do email...
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Auth -> adicionado
 LOGIN_URL = 'app_accounts:login'
 LOGIN_REDIRECT_URL = 'app_core:home'
 LOGOUT_URL = 'app_accounts:logout'
