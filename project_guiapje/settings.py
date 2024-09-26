@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-# Teste de alteração
 
 from pathlib import Path
 import os
@@ -30,7 +29,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'www.guiapje.com.br']
 
 # Application definition
 
@@ -155,7 +154,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'project_guiapje','media')
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # simular envio via console
 #Email
 EMAIL_BACKEND = str(os.getenv('EMAIL_BACKEND'))
-DEFAULT_FROM_EMAIL = str(os.getenv('DEFAULT_FROM_EMAIL'))  # 'Guia PJe <jfbransou@gmail.com>'
+DEFAULT_FROM_EMAIL = str(os.getenv('DEFAULT_FROM_EMAIL'))
 EMAIL_USE_TLS = str(os.getenv('EMAIL_USE_TLS'))
 EMAIL_HOST = str(os.getenv('EMAIL_HOST'))
 EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
