@@ -12,24 +12,30 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import logging
 from dotenv import load_dotenv
+from datetime import datetime
 
-load_dotenv()
+hora_atual = datetime.now().strftime("%H:%M:%S")
+logging.warning('>>>>> Teste de log: o sistema de logs está funcionando corretamente!' + hora_atual)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#print(f"Base dir ======= : {BASE_DIR}")
+dotenv_path = BASE_DIR.parent / 'guia-pje/.env'
+
+load_dotenv(dotenv_path=dotenv_path)
+
+#logging.warning('>>>>> DOTENV_PATH ====== ' + str(dotenv_path))
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'www.guiapje.com.br']
+ALLOWED_HOSTS = ['localhost','www.guiapje.com.br','guiapje.com.br','67.207.91.222']
 
 # Application definition
 
@@ -81,15 +87,14 @@ WSGI_APPLICATION = 'project_guiapje.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': str(os.getenv('DATABASE_ENGINE')), 
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': str(os.getenv('DATABASE_NAME')),
         'USER': str(os.getenv('DATABASE_USER')),
         'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
-        'HOST': str(os.getenv('DATABASE_HOST')),   # Or an IP Address that your DB is hosted on
+        'HOST': str(os.getenv('DATABASE_HOST')),
         'PORT': str(os.getenv('DATABASE_PORT')),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -173,3 +178,42 @@ LOGOUT_URL = 'app_accounts:logout'
 LOGOUT_REDIRECT_URL = 'app_core:home'
 
 AUTH_USER_MODEL = "app_accounts.User"
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file_warning': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/guia-pje/error.log',
+        },
+        'file_debug': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/guia-pje/error.log',
+        },
+        'file_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/guia-pje/error.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file_warning','file_debug','file_error'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
