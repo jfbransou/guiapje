@@ -13,7 +13,7 @@ User = get_user_model()
 # Create your views here.
 
 @login_required  # quando isso é feito.. a funcao abaixo chamada esta linha todas vez antes de ser executada
-def dashboard(request): 
+def dashboard(request):
     template_name = 'app_accounts/dashboard.html'
     context = {}
     #context['enrollments'] = Enrollment.objects.filter(user=request.user)
@@ -82,7 +82,7 @@ def edit(request):
             context['sucess'] = True
     else:
         form = EditAccountForm(instance=request.user)
-    
+
     context['form'] = form
     return render(request, template_name, context)
 
@@ -98,7 +98,7 @@ def edit_password(request):
             context['sucess'] = True
     else:
         form = PasswordChangeForm(user=request.user)
-    
+
     context['form'] = form
     return render(request, template_name, context)
 

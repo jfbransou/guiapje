@@ -11,10 +11,12 @@ import os
 import sys
 
 # Adiciona o caminho das bibliotecas do ambiente virtual ao sys.path
-sys.path.append('/var/www/guia-pje/venv/lib/python3.12/site-packages')  # Substitua '3.x' pela versão do Python que você está usando
+#sys.path.append('/var/www/guia-pje/venv/lib/python3.12/site-packages')  # Substitua '3.x' pela versão do Python que você está usando
+sys.path.append('/home/jfbransou/.virtualenvs/venv/lib/python3.10/site-packages')  # Substitua '3.x' pela versão do Python que você está usando
 
 # Adiciona o diretório do seu projeto ao sys.path
-sys.path.append('/var/www/guia-pje/project_guiapje')
+#sys.path.append('/var/www/guia-pje/project_guiapje')
+sys.path.append('/home/jfbransou/guia-pje/project_guiapje')
 
 # Define as configurações do Django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_guiapje.settings')

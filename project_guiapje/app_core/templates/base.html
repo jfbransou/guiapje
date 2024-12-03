@@ -29,7 +29,8 @@
             <li class="pure-menu-selected"><a href="{% url 'app_core:home' %}">Início</a></li>
             <li><a href="{% url 'app_core:contact' %}">Contato</a></li>
             <li><a href="{% url "app_guiapje:guiapje_completo" %}">Guia Completo</a></li>
-            {% comment %} {% if user.is_authenticated %}
+            {% comment %}
+            {% if user.is_authenticated %}
                 <li><a href="{% url 'app_accounts:dashboard' %}">Painel</a></li> <!-- Significa para ir na aplicacao app_counts, no arquivo urls.py e ver o "name" dashboard. Conferir que aponta para "/conta". -->
                 <li><a href="{% url 'app_accounts:logout' %}">Sair</a></li>
                 {% if user.avatar %}
@@ -39,7 +40,8 @@
                 {% endif %}
             {% else %}
                 <li><a href="{% url 'app_accounts:login' %}">Entrar</a></li>
-            {% endif %} {% endcomment %}
+            {% endif %}
+            {% endcomment %}
         </ul>
     </div>
 </div>
@@ -52,7 +54,7 @@
             {% endfor %}
         </aside>
     </div>
-    {% endif %}    
+    {% endif %}
     {% block content %}{% endblock %}
     <div class="footer">
         Guia de Compreensão sobre o PJe - Uma abordagem de entendimento para usuários e profissionais de TI - @2024

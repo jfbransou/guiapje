@@ -35,7 +35,14 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','www.guiapje.com.br','guiapje.com.br','67.207.91.222']
+ALLOWED_HOSTS = [
+    'jfbransou.pythonanywhere.com'
+]
+#'localhost',
+#'www.guiapje.com.br',
+#'67.207.91.222',
+#'guiapje.com.br',
+
 
 # Application definition
 
@@ -127,24 +134,29 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
+#STATIC_ROOT = os.path.join(BASE_DIR, 'project_guiapje/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'project_guiapje/staticfiles')
 
-# URL para acessar os arquivos estáticos no navegador
-STATIC_URL = '/static/'
+#STATIC_ROOT = "/home/myusername/myproject/static"
+# or, eg,
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # O STATICFILES_DIRS informa ao Django onde procurar arquivos estáticos além das pastas static/ nas aplicações.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'project_guiapje/static'), # Pasta global 'static' no diretório do PROJETO 
+    #os.path.join(BASE_DIR, 'project_guiapje/static'), # Pasta global 'static' no diretório do PROJETO
     os.path.join(BASE_DIR, 'project_guiapje/app_core/static'), # Pasta 'static' da APLICAÇÃO app_core
     os.path.join(BASE_DIR, 'project_guiapje/app_guiapje/static'), # Pasta 'static' da APLICAÇÃO app_guiapje
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'project_guiapje/staticfiles') 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
+# URL para acessar os arquivos estáticos no navegador
+STATIC_URL = '/static/'
 
-#print(f"STATICFILES_DIRS ======= : ", STATICFILES_DIRS)
-#print("STATIC_ROOT: =============: ", STATIC_ROOT)
-#print(f"BASE_DIR ======= : ", BASE_DIR)
+print(f"BASE_DIR ======= : ", BASE_DIR)
+print(f"STATIC_ROOT ======= : ", STATIC_ROOT)
+print(f"STATICFILES_DIRS: =============: ", STATICFILES_DIRS)
+print(f"STATIC_URL ======= : ", STATIC_URL)
 
 # Comando python3 manage.py findstatic --verbosity 2
 
@@ -196,17 +208,17 @@ LOGGING = {
         'file_warning': {
             'level': 'WARNING',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/guia-pje/error.log',
+            'filename': '/home/jfbransou/guia-pje/error.log',
         },
         'file_debug': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/guia-pje/error.log',
+            'filename': '/home/jfbransou/guia-pje/error.log',
         },
         'file_error': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/guia-pje/error.log',
+            'filename': '/home/jfbransou/guia-pje/error.log',
         },
     },
     'loggers': {
